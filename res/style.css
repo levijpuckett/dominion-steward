@@ -1,0 +1,228 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+header {
+    background-color: lightgray;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.name {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+}
+
+.disclaimer {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+
+/* ripped straight from github */
+code {
+    background-color: rgba(27, 31, 35, 0.05);
+    border-radius: 3px;
+    font-size: 85%;
+    margin: 0;
+    padding: 0.2em 0;
+}
+
+label.select {
+    position: relative;
+    display: inline-block;
+}
+
+.select select {
+    display: inline-block;
+    border: 2px solid darkgray;
+    padding: 4px 3px 3px 5px;
+    margin: 0;
+    font: inherit;
+    outline:none;
+    line-height: 1.2;
+    background: inherit;
+    border-radius: 6px 6px 0 0;
+
+    -webkit-appearance: none;
+    /* we need -moz-apearance: normal for correct padding */
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .select select {
+        padding-right:30px;
+    }
+}
+
+.select select:hover {
+    box-shadow: 0 0 3px;
+    cursor: pointer;
+}
+.select select:active {
+    box-shadow: 0 0 0;
+    cursor: pointer;
+}
+
+.select:after {
+    content: "▼";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 60%;
+    line-height: 30px;
+    padding: 0 7px;
+    background: darkgray;
+    color: white;
+
+    pointer-events:none;
+
+    border-radius: 0 6px 0 0;
+}
+
+.no-pointer-events .select:after {
+    content: none;
+}
+
+#arrow {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "DejaVu Serif";
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* rotatable */
+.rotatable {
+    transform: rotate(0deg);
+    transition: transform ease-in .2s;
+}
+
+.rotatable:hover {
+    box-shadow: 0 0 5px;
+}
+
+.rotatable:active {
+    box-shadow: inset 0 0 5px;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+/* flipper */
+.flip-container {
+    perspective: 1000px;
+}
+
+.flip-container.flipped .flipper {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.front {
+    position: relative;
+    transform: rotateY(0deg);
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* toggle button */
+.btn-toggle {
+    margin:4px;
+    background-color: saddlebrown;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+    float:left;
+    box-shadow: 0 0 10px;
+}
+
+.btn-toggle span {
+    text-align:center;
+    padding:3px 0px;
+    display:block;
+}
+
+.btn-toggle input {
+    position: absolute;
+    top:-20px;
+}
+
+.btn-toggle input:checked + span {
+    box-shadow: inset 0 0 10px;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+/* various */
+.middle {
+    align-items: center;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.inputspan {
+    width: 100%;
+}
+
+#num-results {
+    text-align: center;
+}
+
+#result div {
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+#result div img {
+    width: 100%;
+}
+
+/* flex stuff */
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+.row {
+    flex-flow: row;
+}
+.column {
+    flex-flow: column;
+}
+.wrap {
+    flex-flow: wrap;
+}
+.flex-start {
+    justify-content: flex-start;
+}
+.flex-end {
+    justify-content: flex-end;
+}

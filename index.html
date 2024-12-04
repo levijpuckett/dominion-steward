@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Spirit Island Card Katalog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="res/style.css">
+    <link rel="stylesheet" href="res/flex.css">
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Spirit Island Card Katalog" href="/search.xml">
+    <script src="cards.js"></script>
+</head>
+<body>
+    <header>
+        <div class="name">
+            Spirit Island Card Katalog
+        </div>
+        <div class="disclaimer">
+            This is an unofficial website. "Spirit Island Card Katalog" is not affiliated with Greater Than Games, LLC.
+            All materials belong to Greater Than Games, LLC.
+        </div>
+    </header>
+    <div class="flex row">
+        <input class="flex-70" type="text" id="search" placeholder="Search here..." autofocus />
+        <div class="flex flex-5 middle" id="num-results"></div>
+        <div class="flex flex-15 middle flex-start">
+            <label class="select">
+                <select id="sort">
+                    <option>Type</option>
+                    <option>Name</option>
+                    <option selected>Cost</option>
+                    <option>Speed</option>
+                    <option>Range</option>
+                    <option>Target</option>
+                    <option>Artist</option>
+                </select>
+            </label>
+            <span id="arrow" class="round clickable rotatable">↓</span>
+        </div>
+    </div>
+    <div class="flex">
+        <p class="flex-97">
+            <a href="https://boardgamegeek.com/thread/1832544/article/26679876#26679876">Documentation</a>
+            | Examples:
+            <code>Gather Dahan</code>,
+            <code>"Dahan and" major</code>
+            <code>elements:plant elements:earth</code>,
+            <code>description:"add 1 presence"</code>,
+            <code>range:sacred range:>=2 cost:<5</code>
+            <code>target:!any</code>
+        </p>
+    </div>
+    <div id="result" class="flex row wrap flex-start"></div>
+</body>
+</html>
