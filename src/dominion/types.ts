@@ -1,6 +1,6 @@
 namespace Dominion.Types {
     export enum ProductSet {
-        Basegame = "Basegame",
+        Base = "Base",
         Empires = "Empires",
     }
 
@@ -19,6 +19,18 @@ namespace Dominion.Types {
     }
 
     export type CardShapedThingType = CardTypeEnum | LandscapeTypeEnum;
+
+    export enum CardCategoryEnum {
+        None = "None",
+        Attack = "Attack",
+        HandsizeNeutral = "Handsize neutral",
+        Offense = "Offense",
+        NonTerminal = "Non-terminal",
+        Terminal = "Terminal",
+        TrashingAttack = "Trashing attack",
+        TreasureGainer = "Treasure gainer",
+        Village = "Village",
+    }
 
     export abstract class CardShapedThing {
         // capital so they can not be searched with filters
@@ -148,7 +160,7 @@ namespace Dominion.Types {
     }
 
     export class Card extends CardShapedThing {
-        constructor(set: ProductSet, type: CardTypeEnum | CardTypeEnum[], name: string, public cost: number, public artist: string, public text: string)
+        constructor(public name: string, set: ProductSet, type: CardTypeEnum | CardTypeEnum[], public cost: number, public category: CardCategoryEnum[], public artist: string, public text: string)
         {
             super(set, type, name);
         }
@@ -163,6 +175,7 @@ namespace Dominion.Types {
             {
                 s += " " + this.type;
             }
+            s += " " + this.category.join(", ");
             s += " " + this.text + " " + this.artist;
             console.log("Generated search string for " + this.name + ": \"" + s + "\"")
             return s.toLowerCase();
