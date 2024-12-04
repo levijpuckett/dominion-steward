@@ -203,8 +203,9 @@ namespace Dominion.Types {
                 text += "<b>Type</b>: " + this.type + "<br/>";
             }
             text += "<b>Cost</b>: " + this.cost + "<br/>";
-            text += "<b>Text</b>: " + this.text + "<br/>";
+            text += "<b>Categories</b>: " + this.category.join(", ") + "<br/>";
             text += "<b>Set</b>: " + this.set + "<br/>";
+            text += "<b>Text</b>: " + this.text + "<br/>";
             text += "<b>Artist</b>: " + this.artist + "<br/>";
             text += "<a href=\"https://wiki.dominionstrategy.com/index.php/" +
                 encodeURIComponent(<string>this.name) + "\" target='_blank'>Wiki</a><br/>";
