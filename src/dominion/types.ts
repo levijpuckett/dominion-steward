@@ -1,4 +1,14 @@
 namespace Dominion.Types {
+    export function getCardProperties(): string[] {
+        const dummyCard = new (Card as any)();
+        let props = Object.getOwnPropertyNames(dummyCard)
+            .filter((name) => name.toLowerCase() == name);
+        props = [...new Set(props)];
+
+        console.log("Fetched properties list: " + props.join(", "));
+        return props;
+    }
+
     export enum ProductSet {
         Base = "Base",
         Empires = "Empires",

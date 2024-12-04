@@ -263,7 +263,7 @@ namespace Parser {
         }
 
         const { index: newIndex, result: [property, /*ws*/, /*:*/, /*ws*/, valueFilterList] } = res;
-        const cardProperties = Types.getCardProperties();
+        const cardProperties = Dominion.Types.getCardProperties();
         if (cardProperties.indexOf(property) == -1) {
             console.error("Unknown card property '" + property + "'\n" + "Allowed properties are: " + cardProperties);
             // continue
