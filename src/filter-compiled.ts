@@ -3,7 +3,7 @@
 
 namespace Filter.Compiled {
     import Filter = Parser.Filter;
-    import Card = Types.Card;
+//    import Card = Types.Card;
 
     export function compile(ast: Filter): (cards: Card[]) => Card[] {
         const test = compileToString(ast);

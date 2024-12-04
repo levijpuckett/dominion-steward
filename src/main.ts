@@ -1,14 +1,16 @@
 /// <reference path="db.ts" />
 /// <reference path="types.ts" />
 /// <reference path="filter.ts" />
+/// <reference path="dominion/types.ts" />
+/// <reference path="dominion/db.ts" />
 
 import FilterType = Filter.FilterType;
 
 const LandAny = Types.LandAny;
-type Card = Types.Card;
-const Card = Types.Card;
+type Card = Dominion.Types.Card;
+const Card = Dominion.Types.Card;
 
-const CARDS = DB.CARDS;
+const CARDS = Dominion.DB.CARDS;
 const EXTRA_CARDS: HTMLDivElement[] = [];
 
 // https://www.poftut.com/get-query-string-url-javascript/
